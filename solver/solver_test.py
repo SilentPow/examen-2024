@@ -335,3 +335,16 @@ class ComplexPatternsTest(unittest.TestCase):
         self.assertEqual(len(atoms), len(solver.atoms))
         for i in range(4):
             self.assertTrue(atoms[i] in solver.atoms)
+
+
+if __name__ == '__main__':
+    #unittest.main()
+    
+    suite = unittest.TestSuite()
+    suite.addTest(SimplePatternsTest('test_solve_hit_miss'))
+
+    runner = unittest.TextTestRunner()
+    result = runner.run(suite)
+
+    # Exit with the appropriate status code
+    exit(0 if result.wasSuccessful() else 1)
